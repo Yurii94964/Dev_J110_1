@@ -13,18 +13,18 @@ public class Countries {
     private String name;
     private double area;
     private double population;
-    private String name_of_the_capital;
-    private double population_of_the_capital;
+    private String nameOfTheCapital;
+    private double populationOfTheCapital;
     
   
     
     
 
-    public Countries(String name, double area, double population, String name_of_the_capital, double population_of_the_capital) {
+    public Countries(String name, double area, double population, String nameOfTheCapital, double populationOfTheCapital) {
         
         this(name, area, population);
-        setName_of_the_capital(name_of_the_capital);
-        setPopulation_of_the_capital(population_of_the_capital);
+        setNameOfTheCapital(nameOfTheCapital);
+        setPopulationOfTheCapital(populationOfTheCapital);
         
        
     }
@@ -40,13 +40,13 @@ public class Countries {
    
     public void print() {
         
-        if(name_of_the_capital == null && population_of_the_capital == 0 )
+        if(nameOfTheCapital == null && populationOfTheCapital == 0 )
             System.out.println("Название страны " + name + ", площадь " + area  + " млн кв. км., " +
-               " население " + population + " млн чел.," + " - " +  ", плотность населения страны " + getCountry_population_density() + " млн чел./млн кв. км.");
+               " население " + population + " млн чел.," + " - " +  ", плотность населения страны " + getCountryPopulationDensity() + " млн чел./млн кв. км.");
         else{
              System.out.println("Название страны " + name + ", площадь " + area + " млн кв. км., " +
-                " население " + population + " млн чел., " + " название столицы " + name_of_the_capital +
-                ", население столицы " + population_of_the_capital + " млн чел." + ", плотность населения страны " + getCountry_population_density() + " млн чел./млн кв. км." );
+                " население " + population + " млн чел., " + " название столицы " + nameOfTheCapital +
+                ", население столицы " + populationOfTheCapital + " млн чел." + ", плотность населения страны " + getCountryPopulationDensity() + " млн чел./млн кв. км." );
         }
     }
     public static void printAll(Countries[] country ){
@@ -57,7 +57,7 @@ public class Countries {
         country [4].print();
         
     }
-    public  double getCountry_population_density( ){
+    public  double getCountryPopulationDensity( ){
         
     return population / area;
             
@@ -67,10 +67,13 @@ public class Countries {
     }
 
     public void setName(String name) {
-        if(name == null)
+        if(name != null && name.trim().isEmpty())
             throw new IllegalArgumentException("название не должно быть пустым");
-            
+        else if (name == null)
+             throw new IllegalArgumentException("название не должно быть null");
         this.name = name;
+        
+        
     }
 
     public double getArea() {
@@ -78,8 +81,8 @@ public class Countries {
     }
 
     public void setArea(double area) {
-       if (area < 0) 
-            throw new IllegalArgumentException("area не может быть меньше ноля");
+       if (area <= 0) 
+            throw new IllegalArgumentException("area не может быть меньше или равна нулю");
         this.area = area;
     }
 
@@ -88,27 +91,27 @@ public class Countries {
     }
 
     public void setPopulation(double population) {
-        if (population < 0) 
-            throw new IllegalArgumentException("population не может быть меньше ноля");
+        if (population <= 0) 
+            throw new IllegalArgumentException("population не может быть меньше или равно нулю");
         this.population = population;
     }
 
-    public String getName_of_the_capital() {
-        return name_of_the_capital;
+    public String getNameOfTheCapital() {
+        return nameOfTheCapital;
     }
 
-    public void setName_of_the_capital(String name_of_the_capital) {
+    public void setNameOfTheCapital(String nameOfTheCapital) {
         
-        this.name_of_the_capital = name_of_the_capital;
+        this.nameOfTheCapital = nameOfTheCapital;
     }
 
-    public double getPopulation_of_the_capital() {
-        return population_of_the_capital;
+    public double getPopulationOfTheCapital() {
+        return populationOfTheCapital;
     }
 
-    public void setPopulation_of_the_capital(double population_of_the_capital) {
+    public void setPopulationOfTheCapital(double populationOfTheCapital) {
       
-        this.population_of_the_capital = population_of_the_capital;
+        this.populationOfTheCapital = populationOfTheCapital;
     }  
     
 }
