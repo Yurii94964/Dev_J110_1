@@ -12,10 +12,10 @@ package books;
 public class Books {
      public static void main(String[] args) {
         
-        Publisher_name_and_city house1 = new Publisher_name_and_city ("Поспект", "Москва");
-        Publisher_name_and_city house2 = new Publisher_name_and_city("Питер", "Санкт-Петербург");
-        Publisher_name_and_city house3 = new Publisher_name_and_city("БХВ", "Санкт-Петебург");
-        Publisher_name_and_city house4 = new Publisher_name_and_city("Диалектика", "Киев");
+        PublisherNameAndCity house1 = new PublisherNameAndCity ("Проспект", "Москва");
+        PublisherNameAndCity house2 = new PublisherNameAndCity("Питер", "Санкт-Петербург");
+        PublisherNameAndCity house3 = new PublisherNameAndCity("БХВ", "Санкт-Петебург");
+        PublisherNameAndCity house4 = new PublisherNameAndCity("Диалектика", "Киев");
         
         
         
@@ -23,20 +23,20 @@ public class Books {
         
         
        
-       Book_data[] books = new  Book_data[5];
-       books [0] = new  Book_data("Computer Science: основы программирования на Java, ООП, алгоритмы и структуры данных","Седжвик Роберт, Уэйн Кевин" ,house2 , 2018);
-       books [1] = new  Book_data("Разработка требований к программному обеспечению. 3-е издание, дополненное","Вигерс Карл",house3 , 2019 );
-       books [2] = new  Book_data("Java. Полное руководство, 10-е издание","Шилдт Герберт ", house4, 2018);
-       books [3] = new  Book_data("C/C++. Процедурное программирование", "Полубенцева М.И.",house3, 2017 );
-       books [4] = new  Book_data("Конституция РФ",house1,2020);
-       Book_data.printAll(books);
+       BookData[] books = new  BookData[5];
+       books [0] = new  BookData("Computer Science: основы программирования на Java, ООП, алгоритмы и структуры данных","Седжвик Роберт, Уэйн Кевин" ,house2 , 2018);
+       books [1] = new  BookData("Разработка требований к программному обеспечению. 3-е издание, дополненное","Вигерс Карл",house3 , 2019 );
+       books [2] = new  BookData("Java. Полное руководство, 10-е издание","Шилдт Герберт ", house4, 2018);
+       books [3] = new  BookData("C/C++. Процедурное программирование", "Полубенцева М.И.",house3, 2017 );
+       books [4] = new  BookData("Конституция РФ",house1,2020);
+       BookData.printAll(books);
        
        for(int i = 0; i < books.length; i++ ){
-           if("Санкт-Петебург".equals(books[i].getPublishing_house().getCity()) )
-               books[i].getPublishing_house().setCity("Санкт-Петербург");
+           if("Санкт-Петебург".equals(books[i].getPublishingHouse().getCity()) )
+               books[i].getPublishingHouse().setCity("Санкт-Петербург");
            
        }
-     Book_data.printAll(books);
+     BookData.printAll(books);
        
 }
      
