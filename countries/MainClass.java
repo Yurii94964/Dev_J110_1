@@ -11,7 +11,7 @@ package countries;
  */
 public class MainClass {
     public static void main(String[] args) {
-       Countries[] country = new Countries[10];
+       Countries[] country = new Countries[5];
        country [0] = new Countries("Russia" ,146, 146.7, "Moskow", 12.6);
        country [1] = new Countries("Finland",338 ,5.5, "Helsinki", 655);
        country [2] = new Countries("France", 643.8, 67.8, "Paris", 2.1);

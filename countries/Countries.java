@@ -50,12 +50,12 @@ public class Countries {
         }
     }
     public static void printAll(Countries[] country ){
-        country [0].print();
-        country [1].print();
-        country [2].print();
-        country [3].print();
-        country [4].print();
         
+         if(country == null)
+           throw new IllegalArgumentException("значение не может быть пустым");
+       for(int i = 0; i < country.length; i++ ){
+           country [i].print();
+       }
     }
     public  double getCountryPopulationDensity( ){
         
