@@ -61,6 +61,8 @@ public class BookData   {
            throw new IllegalArgumentException("значение не может быть пустым");
        for(int i = 0; i < books.length; i++ ){
            books [i].print();
+           
+           
        }
    }
     public void setAutor(String autor) {
